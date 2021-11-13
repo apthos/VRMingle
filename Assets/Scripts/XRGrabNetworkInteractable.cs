@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 
 public class XRGrabNetworkInteractable : XRGrabInteractable
@@ -23,6 +24,7 @@ public class XRGrabNetworkInteractable : XRGrabInteractable
     protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
         photonView.RequestOwnership();
+        // SceneManager.LoadScene(2, LoadSceneMode.Single);
         base.OnSelectEntered(interactor);
     }
 }
