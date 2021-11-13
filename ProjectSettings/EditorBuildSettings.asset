@@ -18,5 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Red Room.unity
     guid: 01bd5b3dcd0a6fa4db01a27cb49656d9
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 21c16dbc815dc934a9f4a8502ec4827b,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7199e71d55ae9a64c80ca9735978017b,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6a07f42d6a24e694eae9960c88c0e2e3,
       type: 2}
