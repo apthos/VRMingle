@@ -1051,7 +1051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &164921549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,6 +2955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingObjects: []
+  pos: 0
 --- !u!1 &522299415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,6 +3401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingObjects: []
+  pos: 0
 --- !u!1 &563649788
 GameObject:
   m_ObjectHideFlags: 0
@@ -5209,7 +5210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &922041312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,7 +5734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1034904191
 GameObject:
   m_ObjectHideFlags: 0
@@ -5916,6 +5915,7 @@ MonoBehaviour:
   - {fileID: 4961674134728872019, guid: 11249d0c620fbf7468897cd51a9fe3b3, type: 3}
   - {fileID: 1170320684904758888, guid: 3634f3f0c9bb4314eab38cf6d7d6a2fe, type: 3}
   - {fileID: 5632567994271486795, guid: 5a4ea209549f0394b9ba00ccd02e9052, type: 3}
+  pos: 0
 --- !u!1 &1071305832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5967,7 +5967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1074315823
 GameObject:
   m_ObjectHideFlags: 0
@@ -6819,7 +6818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1184385048
 GameObject:
   m_ObjectHideFlags: 0
@@ -6860,6 +6858,7 @@ MonoBehaviour:
     sceneIndex: 3
     maxPlayer: 20
   roomUI: {fileID: 80529423}
+  player: {fileID: 2087833740}
 --- !u!4 &1184385050
 Transform:
   m_ObjectHideFlags: 0
@@ -6993,7 +6992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1257277895
 GameObject:
   m_ObjectHideFlags: 0
@@ -7172,6 +7170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingObjects: []
+  pos: 0
 --- !u!1 &1267436152
 GameObject:
   m_ObjectHideFlags: 0
@@ -7483,6 +7482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingObjects: []
+  pos: 0
 --- !u!1 &1312068694
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,6 +7592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingObjects: []
+  pos: 0
 --- !u!1 &1332408522
 GameObject:
   m_ObjectHideFlags: 0
@@ -8044,7 +8045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1416950419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9583,6 +9583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingObjects: []
+  pos: 0
 --- !u!1 &1729867958
 GameObject:
   m_ObjectHideFlags: 0
@@ -10473,6 +10474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingObjects: []
+  pos: 0
 --- !u!1 &1929867669
 GameObject:
   m_ObjectHideFlags: 0
@@ -10524,7 +10526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1949869806
 GameObject:
   m_ObjectHideFlags: 0
@@ -11517,28 +11518,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2087833740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b34749a5ca6f346b9925963783a43d, type: 3}
+  m_Script: {fileID: 11500000, guid: d58ecab61d0bba9499efa285949fc6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinTones:
-  - {fileID: 2100000, guid: 4680d694da49969499832d6094ab61ce, type: 2}
-  - {fileID: 2100000, guid: f524fde22dbc81549831235fece57fb8, type: 2}
-  - {fileID: 2100000, guid: cd87847aa1bbedc43b15812234c6740b, type: 2}
-  - {fileID: 2100000, guid: 2d0e41eb5966d9746bbb28fbf0fc380f, type: 2}
-  - {fileID: 2100000, guid: ae8a1ffc2ca7f79428bda67c7f645e25, type: 2}
-  - {fileID: 2100000, guid: a863325c4cc8d3240a84df1b631634a5, type: 2}
-  - {fileID: 2100000, guid: 4c99c176929b8af4494c587110966e85, type: 2}
-  - {fileID: 2100000, guid: b7c4f5035706b134491530964febb6b3, type: 2}
-  - {fileID: 2100000, guid: e43353494fae1834ba44bca5b394916e, type: 2}
-  - {fileID: 2100000, guid: 273b383fa939aa24b912b10997bdfaa7, type: 2}
-  - {fileID: 2100000, guid: 6eceac4b709e5b14485343e4642c745e, type: 2}
-  - {fileID: 2100000, guid: 84aecddf35be3324d917224e7f74f032, type: 2}
-  - {fileID: 2100000, guid: dd49c9c3340241e41bfbefa97b8fe869, type: 2}
-  - {fileID: 2100000, guid: 5426dcc3eddc0434aa5d46ff90fb3962, type: 2}
-  - {fileID: 2100000, guid: 0af8547fe5971c84ba755c43899ded4f, type: 2}
-  - {fileID: 2100000, guid: 17bdc742b55e3a847af069ce8b59d227, type: 2}
-  - {fileID: 2100000, guid: 75b0654fcff866048b87684c076cb8ac, type: 2}
-  - {fileID: 2100000, guid: c875ff5b4a9b23f46b9030e59cba6102, type: 2}
 --- !u!114 &2087833743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11548,9 +11530,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2087833740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ae4118d1b2f57448476d55411f2fc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 718639f13ce192947a807a711dc91ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hair: {fileID: 1286542453}
+  Glasses: {fileID: 1051218129}
+  Beard: {fileID: 1266831630}
+  Hats: {fileID: 498920741}
+  Shirt: {fileID: 554332608}
+  Jacket: {fileID: 1918723856}
 --- !u!1 &2112114597
 GameObject:
   m_ObjectHideFlags: 0

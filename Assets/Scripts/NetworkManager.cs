@@ -17,7 +17,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public List<DefaultRoom> defaultRooms;
     public GameObject roomUI;
-    public PhotonHashtable clothesOptions;
+    public GameObject player;
+    public PhotonHashtable clothesOptions = new PhotonHashtable();
 
     public void ConnectToServer()
     {
@@ -36,20 +37,23 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedLobby();
         Debug.Log("Joined Lobby");
-        SetClothesOptions();
         roomUI.SetActive(true);
-    }
-    public void SetClothesOptions()
-    {
-        clothesOptions = PhotonNetwork.LocalPlayer.CustomProperties;
-        clothesOptions.Add("ID", PhotonNetwork.LocalPlayer.UserId);
-        PhotonNetwork.LocalPlayer.SetCustomProperties(clothesOptions);
     }
 
     public void InitializeRoom(int defaultRoomIndex)
     {
-        DefaultRoom roomSettings = defaultRooms[defaultRoomIndex];
+        // Prepare Player for room join
+        int[] playerOptions = player.GetComponent<PlayerInformation>().PlayerInfo();
+        clothesOptions["Hair"] = playerOptions[0];
+        clothesOptions["Glasses"] = playerOptions[1];
+        clothesOptions["Beard"] = playerOptions[2];
+        clothesOptions["Hats"] = playerOptions[3];
+        clothesOptions["Shirt"] = playerOptions[4];
+        clothesOptions["Jacket"] = playerOptions[5];
+        PhotonNetwork.LocalPlayer.SetCustomProperties(clothesOptions);
 
+        // Connect player to room
+        DefaultRoom roomSettings = defaultRooms[defaultRoomIndex];
         PhotonNetwork.LoadLevel(roomSettings.sceneIndex);
 
         RoomOptions roomOptions = new RoomOptions();
@@ -58,19 +62,5 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         roomOptions.IsOpen = true;
 
         PhotonNetwork.JoinOrCreateRoom(roomSettings.Name, roomOptions, TypedLobby.Default);
-    }
-
-    public override void OnJoinedRoom()
-    {
-        Debug.Log("Joined a Room");
-        base.OnJoinedRoom();
-    }
-
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        Debug.Log("Another player joined the room");
-        base.OnPlayerEnteredRoom(newPlayer);
-        PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("ID", out object newPlayerID);
-        Debug.Log("New Player ID: " + newPlayerID);
     }
 }

@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using ExitGames.Client.Photon;
 using Photon.Realtime;
 
 public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 {
-    public GameObject cube;
-
     private GameObject spawnedPlayerPrefab;
     Player player;
     
@@ -16,9 +13,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
-        //Update the clothes on this prefab so it displays later
-        //Make script on network player that makes a hash table of all player preferences
-        //var Glasses = Instantiate(spawnedPlayerPrefab.GetComponent<NetworkPlayer>().playerProperties("glasses"), transform);
+        spawnedPlayerPrefab.GetComponent<NetworkPlayer>().player = PhotonNetwork.LocalPlayer;
     }
 
     public override void OnLeftRoom()
@@ -27,4 +22,15 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         PhotonNetwork.Destroy(spawnedPlayerPrefab);
     }
 
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Debug.Log("Another player joined the room");
+        base.OnPlayerEnteredRoom(newPlayer);
+
+        // INSTANTIATE THE OBJECTS USING THE CUSTOM PROPERTIES OF newPlayer BY CALLING LoadCustomization from NetworkPlayer script
+        // spawnedPlayerPrefab.GetComponent<NetworkPlayer>().LoadCustomization();
+        // WE NEED SOME WAY TO GRAB THE NetworkPlayer that corresponds to the newPlayer (maybe a find gameobject function)
+
+        Debug.Log(newPlayer.CustomProperties["Glasses"]);
+    }
 }

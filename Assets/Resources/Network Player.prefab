@@ -677,18 +677,11 @@ MonoBehaviour:
   rightHand: {fileID: 6992438756238840574}
   leftHandAnimator: {fileID: 2410892926056740598}
   rightHandAnimator: {fileID: 8614911361555052602}
-  cube: {fileID: 8697666668182380464, guid: 5b4b707f5d99a0344b0e62688e7846ce, type: 3}
-  Hair: []
-  Glasses:
-  - {fileID: 2737363754372399720, guid: 511d170deea8cdb46b2d9296c9a8cb73, type: 3}
-  - {fileID: 4961674134728872019, guid: 11249d0c620fbf7468897cd51a9fe3b3, type: 3}
-  - {fileID: 1170320684904758888, guid: 3634f3f0c9bb4314eab38cf6d7d6a2fe, type: 3}
-  - {fileID: 5632567994271486795, guid: 5a4ea209549f0394b9ba00ccd02e9052, type: 3}
-  Beard: []
-  Hats: []
-  Jacket: []
-  SkinColor: []
-  Emotion: []
+  glasses:
+  - {fileID: 3769646302380094445, guid: 511d170deea8cdb46b2d9296c9a8cb73, type: 3}
+  - {fileID: 8531599104263188599, guid: 11249d0c620fbf7468897cd51a9fe3b3, type: 3}
+  - {fileID: 3369186543215703212, guid: 3634f3f0c9bb4314eab38cf6d7d6a2fe, type: 3}
+  - {fileID: 2828916002580233275, guid: 5a4ea209549f0394b9ba00ccd02e9052, type: 3}
 --- !u!114 &938234737149013360
 MonoBehaviour:
   m_ObjectHideFlags: 0

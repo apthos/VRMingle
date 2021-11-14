@@ -20,14 +20,13 @@ public class AvatarAssetManager : MonoBehaviour
         }
 
         //Destroy all children of the body part
-        foreach (Transform child in transform)
+        foreach (Transform child in this.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
 
-        var temp = Instantiate(clothingObjects[pos], transform);
-        
-
+        var temp = Instantiate(clothingObjects[pos]);
+        temp.transform.parent = this.transform;
     }
 
     public void onLeftClick()
@@ -50,5 +49,10 @@ public class AvatarAssetManager : MonoBehaviour
 
         var temp = Instantiate(clothingObjects[pos]);
         temp.transform.parent = this.transform;
+    }
+
+    public int position()
+    {
+        return pos;
     }
 }

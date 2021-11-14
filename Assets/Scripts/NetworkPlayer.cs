@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using Photon.Pun;
+using Photon.Realtime;
+using PhotonHashtable = ExitGames.Client.Photon.Hashtable;
 
-public class NetworkPlayer : MonoBehaviour
+public class NetworkPlayer : MonoBehaviourPunCallbacks
 {
 
     public Transform head;
@@ -15,7 +17,10 @@ public class NetworkPlayer : MonoBehaviour
     public Animator leftHandAnimator;
     public Animator rightHandAnimator;
 
-    public GameObject cube;
+    public PhotonHashtable clothesOptions;
+    public Player player;
+
+    public GameObject[] glasses;
 
     private PhotonView photonView;
 
@@ -43,8 +48,6 @@ public class NetworkPlayer : MonoBehaviour
         headRig = rig.transform.Find("Camera Offset/Main Camera");
         leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
         rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
-
-        var temp = Instantiate(cube, head);
 
         if (photonView.IsMine)
         {
@@ -94,5 +97,11 @@ public class NetworkPlayer : MonoBehaviour
         {
             handAnimator.SetFloat("Grip", 0);
         }
+    }
+
+    public void LoadCustomization()
+    {
+        // Load customization using the custom properties of player or some other way (i.e. just passing in the hashtable idk)
+        var temp = Instantiate(glasses[(int)player.CustomProperties["Glasses"]], head);
     }
 }
