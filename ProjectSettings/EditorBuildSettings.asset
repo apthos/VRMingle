@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Red Room.unity
     guid: 01bd5b3dcd0a6fa4db01a27cb49656d9
+  - enabled: 1
+    path: Assets/Scenes/ParkMap.unity
+    guid: 22b4808fdbe8ef94382f6fc0fbe25e04
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 21c16dbc815dc934a9f4a8502ec4827b,
       type: 2}

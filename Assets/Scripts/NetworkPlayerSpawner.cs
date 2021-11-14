@@ -7,7 +7,6 @@ using Photon.Realtime;
 public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 {
     private GameObject spawnedPlayerPrefab;
-    
 
     Player player;
     

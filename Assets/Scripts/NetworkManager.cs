@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using PhotonHashtable = ExitGames.Client.Photon.Hashtable;
+using TMPro;
 
 [System.Serializable]
 public class DefaultRoom
@@ -16,12 +17,14 @@ public class DefaultRoom
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public List<DefaultRoom> defaultRooms;
-    public GameObject roomUI;
+    public GameObject connectButton;
     public GameObject player;
     public PhotonHashtable clothesOptions = new PhotonHashtable();
 
     public void ConnectToServer()
     {
+        GameObject textChild = connectButton.transform.GetChild(0).gameObject;
+        textChild.GetComponent<TextMeshProUGUI>().text = "Connecting...";
         PhotonNetwork.ConnectUsingSettings();
         Debug.Log("Connecting to server...");
     }
@@ -37,10 +40,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedLobby();
         Debug.Log("Joined Lobby");
-        roomUI.SetActive(true);
+        InitializeRoom();
     }
 
-    public void InitializeRoom(int defaultRoomIndex)
+    public void InitializeRoom()
     {
         // Prepare Player for room join
         int[] playerOptions = player.GetComponent<PlayerInformation>().PlayerInfo();
@@ -53,14 +56,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LocalPlayer.SetCustomProperties(clothesOptions);
 
         // Connect player to room
-        DefaultRoom roomSettings = defaultRooms[defaultRoomIndex];
-        PhotonNetwork.LoadLevel(roomSettings.sceneIndex);
-
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = (byte)roomSettings.maxPlayer;
-        roomOptions.IsVisible = true;
-        roomOptions.IsOpen = true;
-
-        PhotonNetwork.JoinOrCreateRoom(roomSettings.Name, roomOptions, TypedLobby.Default);
+        PhotonNetwork.LoadLevel("ParkMap");
+        PhotonNetwork.JoinRandomOrCreateRoom(null, 2);
     }
 }

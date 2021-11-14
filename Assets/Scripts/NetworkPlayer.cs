@@ -20,8 +20,6 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
     public PhotonHashtable clothesOptions;
     public Player player;
 
-    public GameObject[] glasses;
-
     private PhotonView photonView;
 
     private Transform headRig;
@@ -29,13 +27,13 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
     private Transform rightHandRig;
 
     //All assets players can wear
-    public GameObject[] Hair;
-    public GameObject[] Glasses;
-    public GameObject[] Beard;
-    public GameObject[] Hats;
-    public GameObject[] Jacket;
-    public GameObject[] SkinColor;
-    public GameObject[] Emotion;
+    public GameObject hair;
+    public GameObject glasses;
+    public GameObject beard;
+    public GameObject hats;
+    public GameObject shirt;
+    //public GameObject SkinColor;
+    //public GameObject Emotion;
 
     //public ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
 
@@ -102,6 +100,7 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
     public void LoadCustomization()
     {
         // Load customization using the custom properties of player or some other way (i.e. just passing in the hashtable idk)
-        var temp = Instantiate(glasses[(int)player.CustomProperties["Glasses"]], head);
+        glasses.transform.GetChild((int)player.CustomProperties["Glasses"]).gameObject.SetActive(true);
+
     }
 }
