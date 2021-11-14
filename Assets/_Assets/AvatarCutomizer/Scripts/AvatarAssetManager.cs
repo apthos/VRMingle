@@ -5,7 +5,7 @@ using UnityEngine;
 public class AvatarAssetManager : MonoBehaviour
 {
     public GameObject[] clothingObjects;
-    int pos = 0;
+    public int pos = 0;
 
     public void onRightClick()
     {
@@ -20,13 +20,14 @@ public class AvatarAssetManager : MonoBehaviour
         }
 
         //Destroy all children of the body part
-        foreach (Transform child in this.transform)
+        foreach (Transform child in transform)
         {
             GameObject.Destroy(child.gameObject);
         }
 
-        var temp = Instantiate(clothingObjects[pos]);
-        temp.transform.parent = this.transform;
+        var temp = Instantiate(clothingObjects[pos], transform);
+        
+
     }
 
     public void onLeftClick()

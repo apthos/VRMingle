@@ -23,6 +23,18 @@ public class NetworkPlayer : MonoBehaviour
     private Transform leftHandRig;
     private Transform rightHandRig;
 
+    //All assets players can wear
+    public GameObject[] Hair;
+    public GameObject[] Glasses;
+    public GameObject[] Beard;
+    public GameObject[] Hats;
+    public GameObject[] Jacket;
+    public GameObject[] SkinColor;
+    public GameObject[] Emotion;
+
+    //public ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +44,7 @@ public class NetworkPlayer : MonoBehaviour
         leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
         rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
 
-        var temp = Instantiate(cube);
-        temp.transform.parent = head;
+        var temp = Instantiate(cube, head);
 
         if (photonView.IsMine)
         {
