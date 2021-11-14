@@ -1051,6 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &164921549
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,6 +5211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &922041312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,6 +5736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1034904191
 GameObject:
   m_ObjectHideFlags: 0
@@ -5967,6 +5970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1074315823
 GameObject:
   m_ObjectHideFlags: 0
@@ -6818,6 +6822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1184385048
 GameObject:
   m_ObjectHideFlags: 0
@@ -6992,6 +6997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1257277895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8045,6 +8051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1416950419
 GameObject:
   m_ObjectHideFlags: 0
@@ -10526,6 +10533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628358d8c348b1e458f22045fbad86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyPartMenu: {fileID: 773349273}
 --- !u!1 &1949869806
 GameObject:
   m_ObjectHideFlags: 0
@@ -11516,7 +11524,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087833740}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d58ecab61d0bba9499efa285949fc6a2, type: 3}
   m_Name: 

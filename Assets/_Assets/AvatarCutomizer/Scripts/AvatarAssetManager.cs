@@ -25,8 +25,7 @@ public class AvatarAssetManager : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
 
-        var temp = Instantiate(clothingObjects[pos]);
-        temp.transform.parent = this.transform;
+        var temp = Instantiate(clothingObjects[pos], transform);
     }
 
     public void onLeftClick()
@@ -47,8 +46,7 @@ public class AvatarAssetManager : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
 
-        var temp = Instantiate(clothingObjects[pos]);
-        temp.transform.parent = this.transform;
+        var temp = Instantiate(clothingObjects[pos], transform);
     }
 
     public int position()

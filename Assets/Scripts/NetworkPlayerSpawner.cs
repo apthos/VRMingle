@@ -7,6 +7,8 @@ using Photon.Realtime;
 public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 {
     private GameObject spawnedPlayerPrefab;
+    
+
     Player player;
     
     public override void OnJoinedRoom()
@@ -30,6 +32,8 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         // INSTANTIATE THE OBJECTS USING THE CUSTOM PROPERTIES OF newPlayer BY CALLING LoadCustomization from NetworkPlayer script
         // spawnedPlayerPrefab.GetComponent<NetworkPlayer>().LoadCustomization();
         // WE NEED SOME WAY TO GRAB THE NetworkPlayer that corresponds to the newPlayer (maybe a find gameobject function)
+
+        
 
         Debug.Log(newPlayer.CustomProperties["Glasses"]);
     }
