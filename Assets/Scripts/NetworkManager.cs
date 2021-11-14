@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using PhotonHashtable = ExitGames.Client.Photon.Hashtable;
 
 [System.Serializable]
 public class DefaultRoom
@@ -16,6 +17,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public List<DefaultRoom> defaultRooms;
     public GameObject roomUI;
+    public PhotonHashtable clothesOptions;
 
     public void ConnectToServer()
     {
@@ -34,7 +36,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedLobby();
         Debug.Log("Joined Lobby");
+        SetClothesOptions();
         roomUI.SetActive(true);
+    }
+    public void SetClothesOptions()
+    {
+        clothesOptions = PhotonNetwork.LocalPlayer.CustomProperties;
+        clothesOptions.Add("ID", PhotonNetwork.LocalPlayer.UserId);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(clothesOptions);
     }
 
     public void InitializeRoom(int defaultRoomIndex)
@@ -61,5 +70,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Another player joined the room");
         base.OnPlayerEnteredRoom(newPlayer);
+        PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("ID", out object newPlayerID);
+        Debug.Log("New Player ID: " + newPlayerID);
     }
 }

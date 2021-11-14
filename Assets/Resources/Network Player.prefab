@@ -491,6 +491,7 @@ MonoBehaviour:
   rightHand: {fileID: 6992438756238840574}
   leftHandAnimator: {fileID: 2410892926056740598}
   rightHandAnimator: {fileID: 8614911361555052602}
+  cube: {fileID: 8697666668182380464, guid: 5b4b707f5d99a0344b0e62688e7846ce, type: 3}
 --- !u!114 &938234737149013360
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class NetworkPlayer : MonoBehaviour
     public Animator leftHandAnimator;
     public Animator rightHandAnimator;
 
+    public GameObject cube;
+
     private PhotonView photonView;
 
     private Transform headRig;
@@ -29,6 +31,9 @@ public class NetworkPlayer : MonoBehaviour
         headRig = rig.transform.Find("Camera Offset/Main Camera");
         leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
         rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
+
+        var temp = Instantiate(cube);
+        temp.transform.parent = head;
 
         if (photonView.IsMine)
         {
